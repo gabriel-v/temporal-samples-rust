@@ -423,10 +423,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "dotenv"
-version = "0.15.0"
+name = "dotenvy"
+version = "0.15.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "77c90badedccf4105eca100756a0b1289e191f6fcbdadd3cee1d2f614f97da8f"
+checksum = "1aaf95b3e5c8f23aa320147307562d361db0ae0d51242340f558153b4eb2439b"
 
 [[package]]
 name = "downcast"
@@ -1835,29 +1835,10 @@ checksum = "719b953e2095829ee67db738b3bfa9fa368c94900df327b3f07fe6e794d2fe1f"
 [[package]]
 name = "rustfsm"
 version = "0.1.0"
-dependencies = [
- "rustfsm_procmacro 0.1.0",
- "rustfsm_trait 0.1.0",
-]
-
-[[package]]
-name = "rustfsm"
-version = "0.1.0"
 source = "git+https://github.com/gabriel-v/temporalio-sdk-core#2e8812ba716ff22b9a9f7522003104e780d90567"
 dependencies = [
- "rustfsm_procmacro 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
- "rustfsm_trait 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
-]
-
-[[package]]
-name = "rustfsm_procmacro"
-version = "0.1.0"
-dependencies = [
- "derive_more",
- "proc-macro2",
- "quote",
- "rustfsm_trait 0.1.0",
- "syn 2.0.79",
+ "rustfsm_procmacro",
+ "rustfsm_trait",
 ]
 
 [[package]]
@@ -1868,13 +1849,9 @@ dependencies = [
  "derive_more",
  "proc-macro2",
  "quote",
- "rustfsm_trait 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
+ "rustfsm_trait",
  "syn 2.0.79",
 ]
-
-[[package]]
-name = "rustfsm_trait"
-version = "0.1.0"
 
 [[package]]
 name = "rustfsm_trait"
@@ -1975,7 +1952,7 @@ name = "schedule"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "dotenv",
+ "dotenvy",
  "env_logger",
  "log",
  "nanoid",
@@ -1984,12 +1961,12 @@ dependencies = [
  "reqwest",
  "serde",
  "serde_json",
- "temporal-client 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
+ "temporal-client",
  "temporal-helpers",
- "temporal-sdk 0.1.0-alpha.1",
- "temporal-sdk-core 0.1.0",
- "temporal-sdk-core-api 0.1.0",
- "temporal-sdk-core-protos 0.1.0",
+ "temporal-sdk",
+ "temporal-sdk-core",
+ "temporal-sdk-core-api",
+ "temporal-sdk-core-protos",
  "tokio",
  "uuid",
 ]
@@ -2239,36 +2216,6 @@ dependencies = [
 [[package]]
 name = "temporal-client"
 version = "0.1.0"
-dependencies = [
- "anyhow",
- "async-trait",
- "backoff",
- "base64",
- "derive_builder",
- "derive_more",
- "futures-retry",
- "futures-util",
- "http",
- "http-body-util",
- "hyper",
- "hyper-util",
- "parking_lot",
- "prost-types",
- "slotmap",
- "temporal-sdk-core-api 0.1.0",
- "temporal-sdk-core-protos 0.1.0",
- "thiserror",
- "tokio",
- "tonic",
- "tower 0.5.1",
- "tracing",
- "url",
- "uuid",
-]
-
-[[package]]
-name = "temporal-client"
-version = "0.1.0"
 source = "git+https://github.com/gabriel-v/temporalio-sdk-core#2e8812ba716ff22b9a9f7522003104e780d90567"
 dependencies = [
  "anyhow",
@@ -2286,8 +2233,8 @@ dependencies = [
  "parking_lot",
  "prost-types",
  "slotmap",
- "temporal-sdk-core-api 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
- "temporal-sdk-core-protos 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
+ "temporal-sdk-core-api",
+ "temporal-sdk-core-protos",
  "thiserror",
  "tokio",
  "tonic",
@@ -2300,38 +2247,17 @@ dependencies = [
 [[package]]
 name = "temporal-helpers"
 version = "0.1.0"
+source = "git+https://github.com/gabriel-v/temporal-samples-rust#ab9febd64b3b0002096f10dbe0292f02e3f7ced2"
 dependencies = [
  "anyhow",
  "log",
  "serde",
  "serde_json",
- "temporal-client 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
- "temporal-sdk 0.1.0-alpha.1 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
- "temporal-sdk-core 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
- "temporal-sdk-core-api 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
- "temporal-sdk-core-protos 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
-]
-
-[[package]]
-name = "temporal-sdk"
-version = "0.1.0-alpha.1"
-dependencies = [
- "anyhow",
- "async-trait",
- "derive_more",
- "futures-util",
- "parking_lot",
- "prost-wkt-types",
- "serde",
- "temporal-client 0.1.0",
- "temporal-sdk-core 0.1.0",
- "temporal-sdk-core-api 0.1.0",
- "temporal-sdk-core-protos 0.1.0",
- "thiserror",
- "tokio",
- "tokio-stream",
- "tokio-util",
- "tracing",
+ "temporal-client",
+ "temporal-sdk",
+ "temporal-sdk-core",
+ "temporal-sdk-core-api",
+ "temporal-sdk-core-protos",
 ]
 
 [[package]]
@@ -2346,71 +2272,15 @@ dependencies = [
  "parking_lot",
  "prost-wkt-types",
  "serde",
- "temporal-client 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
- "temporal-sdk-core 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
- "temporal-sdk-core-api 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
- "temporal-sdk-core-protos 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
+ "temporal-client",
+ "temporal-sdk-core",
+ "temporal-sdk-core-api",
+ "temporal-sdk-core-protos",
  "thiserror",
  "tokio",
  "tokio-stream",
  "tokio-util",
  "tracing",
-]
-
-[[package]]
-name = "temporal-sdk-core"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "async-trait",
- "crossbeam-channel",
- "crossbeam-queue",
- "crossbeam-utils",
- "dashmap 6.1.0",
- "derive_builder",
- "derive_more",
- "enum-iterator",
- "enum_dispatch",
- "futures-channel",
- "futures-util",
- "governor",
- "http-body-util",
- "hyper",
- "hyper-util",
- "itertools",
- "lru",
- "mockall",
- "opentelemetry",
- "opentelemetry-otlp",
- "opentelemetry-prometheus",
- "opentelemetry_sdk",
- "parking_lot",
- "pid",
- "pin-project",
- "prometheus",
- "prost",
- "prost-wkt-types",
- "rand",
- "ringbuf",
- "rustfsm 0.1.0",
- "serde",
- "serde_json",
- "siphasher",
- "slotmap",
- "sysinfo",
- "temporal-client 0.1.0",
- "temporal-sdk-core-api 0.1.0",
- "temporal-sdk-core-protos 0.1.0",
- "thiserror",
- "tokio",
- "tokio-stream",
- "tokio-util",
- "tonic",
- "tonic-build",
- "tracing",
- "tracing-subscriber",
- "url",
- "uuid",
 ]
 
 [[package]]
@@ -2449,15 +2319,15 @@ dependencies = [
  "prost-wkt-types",
  "rand",
  "ringbuf",
- "rustfsm 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
+ "rustfsm",
  "serde",
  "serde_json",
  "siphasher",
  "slotmap",
  "sysinfo",
- "temporal-client 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
- "temporal-sdk-core-api 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
- "temporal-sdk-core-protos 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
+ "temporal-client",
+ "temporal-sdk-core-api",
+ "temporal-sdk-core-protos",
  "thiserror",
  "tokio",
  "tokio-stream",
@@ -2473,23 +2343,6 @@ dependencies = [
 [[package]]
 name = "temporal-sdk-core-api"
 version = "0.1.0"
-dependencies = [
- "async-trait",
- "derive_builder",
- "derive_more",
- "opentelemetry",
- "prost-types",
- "serde_json",
- "temporal-sdk-core-protos 0.1.0",
- "thiserror",
- "tonic",
- "tracing-core",
- "url",
-]
-
-[[package]]
-name = "temporal-sdk-core-api"
-version = "0.1.0"
 source = "git+https://github.com/gabriel-v/temporalio-sdk-core#2e8812ba716ff22b9a9f7522003104e780d90567"
 dependencies = [
  "async-trait",
@@ -2498,32 +2351,11 @@ dependencies = [
  "opentelemetry",
  "prost-types",
  "serde_json",
- "temporal-sdk-core-protos 0.1.0 (git+https://github.com/gabriel-v/temporalio-sdk-core)",
+ "temporal-sdk-core-protos",
  "thiserror",
  "tonic",
  "tracing-core",
  "url",
-]
-
-[[package]]
-name = "temporal-sdk-core-protos"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "base64",
- "derive_more",
- "prost",
- "prost-build",
- "prost-wkt",
- "prost-wkt-build",
- "prost-wkt-types",
- "rand",
- "serde",
- "serde_json",
- "thiserror",
- "tonic",
- "tonic-build",
- "uuid",
 ]
 
 [[package]]
