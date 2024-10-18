@@ -1,4 +1,4 @@
-use dotenv::dotenv;
+use dotenvy::dotenv;
 
 use activities_examples::worker;
 
