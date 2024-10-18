@@ -7,15 +7,15 @@ default-run = "main"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.71"
+anyhow = "1.0.89"
 dotenv = "0.15.0"
-env_logger = "0.10.0"
-log = "0.4.14"
+env_logger = "0.11.5"
+log = "0.4.22"
 nanoid = "0.4.0"
-prost-wkt-types = "0.4.1"
-reqwest = { version = "0.11.17", features = ["json"] }
-serde = { version = "1.0.130", features = ["derive"] }
-serde_json = "1.0.68"
+prost-wkt-types = "0.6.0"
+reqwest = { version = "0.12.8", features = ["json"] }
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = "1.0.128"
 temporal-client = { path = "../../sdk-core/client" }
 temporal-helpers = { path = "../temporal-helpers" }
 temporal-sdk = { path = "../../sdk-core/sdk" }

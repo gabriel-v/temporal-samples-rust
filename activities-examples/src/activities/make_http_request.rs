@@ -1,7 +1,7 @@
 use log::info;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use temporal_sdk::ActContext;
+use temporal_sdk::{ActContext, ActivityError};
 
 /// Make the http request
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -12,7 +12,7 @@ struct Response {
 pub async fn make_http_request(
     _ctx: ActContext,
     _payload: Option<String>,
-) -> Result<String, anyhow::Error> {
+) -> Result<String, ActivityError> {
     let id = nanoid::nanoid!();
     info!("Starting http request activity: {}", id);
     let response = reqwest::get(format!("https://httpbin.org/get?answer={}", id))
@@ -24,5 +24,5 @@ pub async fn make_http_request(
     if let Some(answer) = response.args.get("answer") {
         return Ok(answer.to_string());
     }
-    Err(anyhow::anyhow!("No answer found"))
+    Err(ActivityError::NonRetryable(anyhow::anyhow!("No answer found")))
 }

@@ -10,6 +10,7 @@ use tokio::sync::Mutex;
 use tokio::time::sleep;
 
 use temporal_helpers::client::get_client;
+use temporal_sdk::ActivityError;
 
 /// Make the http request
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -20,7 +21,7 @@ struct Response {
 pub async fn do_something_async(
     ctx: ActContext,
     _payload: Option<String>,
-) -> Result<ActExitValue<()>, anyhow::Error> {
+) -> Result<ActExitValue<()>, ActivityError> {
     let shared_token: Arc<Mutex<Option<Vec<u8>>>> = Arc::new(Mutex::new(None));
     let shared_token_ref = shared_token.clone();
     {

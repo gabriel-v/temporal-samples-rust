@@ -39,9 +39,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             namespace: namespace.to_owned(),
             schedule: Some(Schedule {
                 spec: Some(ScheduleSpec {
-                    cron_string: vec!["@every 10s".to_string()],
+                    cron_string: vec!["@every 1s".to_string()],
                     start_time: Some(Timestamp::date_time(2024, 5, 18, 20, 0, 0)?),
-                    end_time: Some(Timestamp::date_time(2024, 5, 18, 22, 0, 0)?),
+                    // end_time: Some(Timestamp::date_time(2024, 5, 18, 22, 0, 0)?),
                     ..Default::default()
                 }),
                 action: Some(ScheduleAction {
@@ -53,6 +53,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                         task_queue: Some(TaskQueue {
                             name: "schedule".to_string(),
                             kind: TaskQueueKind::Unspecified as i32,
+                            normal_name: "".to_string(),
                         }),
                         ..Default::default()
                     })),
@@ -150,7 +151,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .await?;
 
     println!("Schedule unpaused: {}", schedule_id);
-    tokio::time::sleep(Duration::from_secs(5)).await;
+    tokio::time::sleep(Duration::from_secs(15)).await;
 
     raw_client
         .delete_schedule(DeleteScheduleRequest {

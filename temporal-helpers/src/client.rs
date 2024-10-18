@@ -6,7 +6,7 @@ use temporal_sdk_core::Url;
 pub async fn get_client() -> Result<RetryClient<Client>, anyhow::Error> {
     let server_options = sdk_client_options(Url::from_str("http://localhost:7233")?).build()?;
 
-    let client = server_options.connect("default", None, None).await?;
+    let client = server_options.connect("default", None).await?;
 
     Ok(client)
 }

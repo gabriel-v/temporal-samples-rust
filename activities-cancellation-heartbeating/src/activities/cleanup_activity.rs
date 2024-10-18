@@ -1,10 +1,10 @@
 use log::info;
-use temporal_sdk::ActContext;
+use temporal_sdk::{ActContext, ActivityError};
 
 pub async fn cleanup_activity(
     _ctx: ActContext,
     _payload: Option<String>,
-) -> Result<(), anyhow::Error> {
+) -> Result<(), ActivityError> {
     info!("Starting cleanup activity");
 
     Ok(())

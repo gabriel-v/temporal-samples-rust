@@ -1,11 +1,11 @@
 use log::info;
-use temporal_sdk::ActContext;
+use temporal_sdk::{ActContext, ActivityError};
 use temporal_sdk_core_protos::coresdk::{AsJsonPayloadExt, FromJsonPayloadExt};
 
 pub async fn fake_progress_activity(
     ctx: ActContext,
     sleep_interval_ms: u64,
-) -> Result<u64, anyhow::Error> {
+) -> Result<u64, ActivityError> {
     info!("Starting fake progress activity");
 
     let starting_point = match ctx.get_heartbeat_details().get(0) {
