@@ -15,7 +15,7 @@ nanoid = "0.4.0"
 prost-wkt-types = "0.6.0"
 reqwest = { version = "0.12.8", features = ["json"] }
 serde = { version = "1.0.210", features = ["derive"] }
-serde_json = "1.0.128"
+serde_json = "1.0.129"
 temporal-client = { path = "../../sdk-core/client" }
 temporal-helpers = { path = "../temporal-helpers" }
 temporal-sdk = { path = "../../sdk-core/sdk" }

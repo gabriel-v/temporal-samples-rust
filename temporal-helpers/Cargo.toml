@@ -9,9 +9,9 @@ edition = "2021"
 anyhow = "1.0.89"
 log = "0.4.22"
 serde = { version = "1.0.210", features = ["derive"] }
-serde_json = "1.0.128"
-temporal-client = { path = "../../sdk-core/client" }
-temporal-sdk = { path = "../../sdk-core/sdk" }
-temporal-sdk-core = { path = "../../sdk-core/core" }
-temporal-sdk-core-api = { path = "../../sdk-core/core-api" }
-temporal-sdk-core-protos = { path = "../../sdk-core/sdk-core-protos" }
+serde_json = "1.0.129"
+temporal-client = { git = "https://github.com/gabriel-v/temporalio-sdk-core" }
+temporal-sdk = { git = "https://github.com/gabriel-v/temporalio-sdk-core" }
+temporal-sdk-core = { git = "https://github.com/gabriel-v/temporalio-sdk-core" }
+temporal-sdk-core-api = { git = "https://github.com/gabriel-v/temporalio-sdk-core" }
+temporal-sdk-core-protos = { git = "https://github.com/gabriel-v/temporalio-sdk-core" }

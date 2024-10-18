@@ -1028,15 +1028,6 @@ checksum = "7943c866cc5cd64cbc25b2e01621d07fa8eb2a1a23160ee81ce38704e97b8ecf"
 
 [[package]]
 name = "itertools"
-version = "0.10.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0fd2260e829bddf4cb6ea802289de2f86d6a7a690192fbe91b3f46e0f2c8473"
-dependencies = [
- "either",
-]
-
-[[package]]
-name = "itertools"
 version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "413ee7dfc52ee1a4949ceeb7dbc8a33f2d6c088194d9f922fb8318faf1f01186"
@@ -1568,7 +1559,7 @@ checksum = "0c1318b19085f08681016926435853bbf7858f9c082d0999b80550ff5d9abe15"
 dependencies = [
  "bytes",
  "heck",
- "itertools 0.10.5",
+ "itertools",
  "log",
  "multimap",
  "once_cell",
@@ -1588,7 +1579,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e9552f850d5f0964a4e4d0bf306459ac29323ddfbae05e35a7c0d35cb0803cc5"
 dependencies = [
  "anyhow",
- "itertools 0.10.5",
+ "itertools",
  "proc-macro2",
  "quote",
  "syn 2.0.79",
@@ -1844,6 +1835,7 @@ checksum = "719b953e2095829ee67db738b3bfa9fa368c94900df327b3f07fe6e794d2fe1f"
 [[package]]
 name = "rustfsm"
 version = "0.1.0"
+source = "git+https://github.com/gabriel-v/temporalio-sdk-core#2e8812ba716ff22b9a9f7522003104e780d90567"
 dependencies = [
  "rustfsm_procmacro",
  "rustfsm_trait",
@@ -1852,6 +1844,7 @@ dependencies = [
 [[package]]
 name = "rustfsm_procmacro"
 version = "0.1.0"
+source = "git+https://github.com/gabriel-v/temporalio-sdk-core#2e8812ba716ff22b9a9f7522003104e780d90567"
 dependencies = [
  "derive_more",
  "proc-macro2",
@@ -1863,6 +1856,7 @@ dependencies = [
 [[package]]
 name = "rustfsm_trait"
 version = "0.1.0"
+source = "git+https://github.com/gabriel-v/temporalio-sdk-core#2e8812ba716ff22b9a9f7522003104e780d90567"
 
 [[package]]
 name = "rustix"
@@ -2004,9 +1998,9 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.128"
+version = "1.0.129"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6ff5456707a1de34e7e37f2a6fd3d3f808c318259cbd01ab6377795054b483d8"
+checksum = "6dbcf9b78a125ee667ae19388837dd12294b858d101fdd393cb9d5501ef09eb2"
 dependencies = [
  "itoa",
  "memchr",
@@ -2198,6 +2192,7 @@ dependencies = [
 [[package]]
 name = "temporal-client"
 version = "0.1.0"
+source = "git+https://github.com/gabriel-v/temporalio-sdk-core#2e8812ba716ff22b9a9f7522003104e780d90567"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2243,6 +2238,7 @@ dependencies = [
 [[package]]
 name = "temporal-sdk"
 version = "0.1.0-alpha.1"
+source = "git+https://github.com/gabriel-v/temporalio-sdk-core#2e8812ba716ff22b9a9f7522003104e780d90567"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2265,6 +2261,7 @@ dependencies = [
 [[package]]
 name = "temporal-sdk-core"
 version = "0.1.0"
+source = "git+https://github.com/gabriel-v/temporalio-sdk-core#2e8812ba716ff22b9a9f7522003104e780d90567"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2282,7 +2279,7 @@ dependencies = [
  "http-body-util",
  "hyper",
  "hyper-util",
- "itertools 0.13.0",
+ "itertools",
  "lru",
  "mockall",
  "opentelemetry",
@@ -2321,6 +2318,7 @@ dependencies = [
 [[package]]
 name = "temporal-sdk-core-api"
 version = "0.1.0"
+source = "git+https://github.com/gabriel-v/temporalio-sdk-core#2e8812ba716ff22b9a9f7522003104e780d90567"
 dependencies = [
  "async-trait",
  "derive_builder",
@@ -2338,6 +2336,7 @@ dependencies = [
 [[package]]
 name = "temporal-sdk-core-protos"
 version = "0.1.0"
+source = "git+https://github.com/gabriel-v/temporalio-sdk-core#2e8812ba716ff22b9a9f7522003104e780d90567"
 dependencies = [
  "anyhow",
  "base64",
